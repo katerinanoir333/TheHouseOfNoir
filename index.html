@@ -2,147 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The House of Noir creates private, bespoke encounters shaped around the person seeking them.">
-  <meta name="theme-color" content="#080a09">
-  <title>The House of Noir — Private Encounters</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="The House of Noir is a private, curated experience in Panama, led by Katerina Noir and approached by consideration only.">
+  <meta name="theme-color" content="#080907">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://katerinanoir333.github.io/TheHouseOfNoir/">
+  <link rel="alternate" hreflang="en" href="https://katerinanoir333.github.io/TheHouseOfNoir/"><link rel="alternate" hreflang="es" href="https://katerinanoir333.github.io/TheHouseOfNoir/es/"><link rel="alternate" hreflang="x-default" href="https://katerinanoir333.github.io/TheHouseOfNoir/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The House of Noir">
+  <meta property="og:title" content="The House of Noir — By Consideration Only">
+  <meta property="og:description" content="A private world of presence, discretion and uncommon connection, led by Katerina Noir.">
+  <meta property="og:url" content="https://katerinanoir333.github.io/TheHouseOfNoir/">
+  <meta property="og:image" content="https://katerinanoir333.github.io/TheHouseOfNoir/assets/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The House of Noir — By consideration only">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The House of Noir — By Consideration Only">
+  <meta name="twitter:description" content="A private world led by Katerina Noir.">
+  <meta name="twitter:image" content="https://katerinanoir333.github.io/TheHouseOfNoir/assets/og-cover.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <title>The House of Noir — By Consideration Only</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"The House of Noir","url":"https://katerinanoir333.github.io/TheHouseOfNoir/","description":"A private, curated experience in Panama, led by Katerina Noir.","inLanguage":"en"}</script>
   <script src="config.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="grain" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="The House of Noir, home">
-      <span class="sigil" aria-hidden="true">N</span>
-      <span>THE HOUSE <i>OF</i> NOIR</span>
-    </a>
-    <nav aria-label="Primary navigation">
-      <a href="#house">The House</a>
-      <a href="#figures">Figures</a>
-      <a href="#process">The Passage</a>
+  <div class="gateway" id="gateway" role="dialog" aria-modal="true" aria-labelledby="gateway-title" hidden>
+    <div class="gateway-panel"><span class="gateway-seal" aria-hidden="true">N</span><p class="eyebrow">THE HOUSE OF NOIR</p><h2 id="gateway-title">Choose your passage.</h2><p>Select your language and confirm that you are 18 or older to enter.</p><div class="gateway-languages" role="group" aria-label="Language"><button type="button" class="gateway-language selected" data-language="en" aria-pressed="true">English</button><button type="button" class="gateway-language" data-language="es" aria-pressed="false">Español</button></div><label class="age-confirm"><input id="age-confirm" type="checkbox"><span>I confirm that I am 18 or older.</span></label><button class="button button-primary gateway-enter" type="button" disabled>Enter The House <span aria-hidden="true">→</span></button><button class="gateway-leave" type="button">I am under 18</button><p class="gateway-note">This confirmation does not verify identity. Please leave if you are under 18.</p></div>
+  </div>
+  <header class="site-header" data-header>
+    <a class="wordmark" href="#top" aria-label="The House of Noir, home"><span class="seal" aria-hidden="true">N</span><span>THE HOUSE <i>OF</i> NOIR</span></a>
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <a href="#house">The House</a><a href="#katerina">Katerina</a><a href="#passage">The Passage</a>
     </nav>
-    <a class="header-cta" href="#request">Request consideration</a>
-    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <div class="header-tools"><a class="language-switch" href="es/" lang="es" hreflang="es">ES</a><a class="header-cta" href="#request">Present yourself</a></div>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <div class="orb orb-one" aria-hidden="true"></div>
-      <div class="orb orb-two" aria-hidden="true"></div>
+    <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Private by nature · Bespoke by design</p>
-        <h1>Not everyone is looking for <em>ordinary.</em></h1>
-        <p class="hero-intro">The House of Noir creates singular experiences for those who recognize what they have been missing.</p>
+        <p class="eyebrow">A private house in Panama · Worldwide inquiries</p>
+        <h1 id="hero-title">Some doors open<br>only with <em>intention.</em></h1>
+        <p class="hero-intro">The House of Noir is a private, curated world led by Katerina Noir—for adults drawn to presence, discretion and uncommon connection.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#request">Request consideration</a>
-          <a class="text-link" href="#process">Understand the passage <span>↘</span></a>
+          <a class="button button-primary" href="#request">Present yourself <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#passage">How the passage begins</a>
         </div>
+        <p class="trust-line">Private by nature. Mutual by design. No request guarantees acceptance.</p>
       </div>
-      <div class="hero-mark" aria-hidden="true">
-        <span class="ring ring-a"></span><span class="ring ring-b"></span>
-        <span class="monogram">THON</span>
-      </div>
-      <p class="side-note" aria-hidden="true">PANAMA · PRIVATE · WORLDWIDE INQUIRIES</p>
+      <div class="hero-art" aria-hidden="true"><span class="frame frame-one"></span><span class="frame frame-two"></span><span class="hero-monogram">N</span></div>
     </section>
 
-    <section class="manifesto section" id="house">
+    <section class="section house" id="house" aria-labelledby="house-title">
       <p class="section-index">01 / THE HOUSE</p>
-      <div class="manifesto-grid">
-        <h2 class="reveal">We are not a service.<br>We are <span>the measure.</span></h2>
-        <div class="body-copy reveal">
-          <p>The House of Noir is a private world built around presence, taste and uncommon connection. Every experience begins with discretion and is shaped for the person invited into it.</p>
-          <p>No catalogue of intimacy. No public promises. What matters is discovered slowly, through intention and mutual trust.</p>
-        </div>
+      <div class="split">
+        <h2 id="house-title" class="reveal">Not a catalogue.<br><span>A point of view.</span></h2>
+        <div class="body-copy reveal"><p>The House exists for encounters that cannot be reduced to a menu. Each begins with context, conversation and mutual trust.</p><p>Discretion is expected. Boundaries are respected. Details are shared only when there is reason to continue.</p></div>
       </div>
     </section>
 
-    <section class="figures section" id="figures">
-      <div class="section-heading">
-        <div><p class="section-index">02 / FIGURES OF THE HOUSE</p><h2>Known by presence,<br>never by definition.</h2></div>
-        <p>Two names. No prescribed relationship. The space between them belongs to the imagination.</p>
-      </div>
-      <div class="figure-grid">
-        <article class="figure-card figure-k reveal" tabindex="0">
-          <div class="jewel jewel-emerald" aria-hidden="true"></div>
-          <div class="figure-number">I</div>
-          <div class="figure-copy">
-            <p class="role">The Velvet Current</p>
-            <h3>Katerina Noir</h3>
-            <p>Magnetic restraint. An atmosphere that remembers you.</p>
-          </div>
-        </article>
-        <article class="figure-card figure-h reveal" tabindex="0">
-          <div class="jewel jewel-lapis" aria-hidden="true"></div>
-          <div class="figure-number">II</div>
-          <div class="figure-copy">
-            <p class="role">The Obsidian Signal</p>
-            <h3>Helios Noir</h3>
-            <p>Precise warmth. A presence that changes the room.</p>
-          </div>
-        </article>
+    <section class="section katerina" id="katerina" aria-labelledby="katerina-title">
+      <div class="portrait" aria-hidden="true"><span class="portrait-line"></span><span class="portrait-gem"></span><span class="portrait-initial">K</span></div>
+      <div class="katerina-copy reveal">
+        <p class="section-index">02 / KATERINA NOIR</p>
+        <p class="role">Founder · The velvet current</p>
+        <h2 id="katerina-title">She never asks<br>for <em>attention.</em></h2>
+        <p>She decides where it belongs. Katerina is the presence at the centre of The House: composed, perceptive and impossible to hurry.</p>
+        <blockquote>“What matters is not arrival, but how you choose to approach.”</blockquote>
       </div>
     </section>
 
-    <section class="passage section" id="process">
-      <p class="section-index">03 / THE PASSAGE</p>
-      <div class="passage-intro">
-        <h2>An encounter is not purchased.<br><span>It is approached.</span></h2>
-        <p>Your first request opens a private channel. If there is resonance, you will receive three ways to present an offering. Once an offering is received, conversation may begin.</p>
-      </div>
+    <section class="section passage" id="passage" aria-labelledby="passage-title">
+      <div class="passage-heading"><div><p class="section-index">03 / THE PASSAGE</p><h2 id="passage-title">Approach,<br><em>don’t presume.</em></h2></div><p>The first step is deliberately simple. Present who you are and what brought you here. If there is alignment, the next conversation happens privately.</p></div>
       <ol class="steps">
-        <li class="reveal"><span>01</span><h3>Signal</h3><p>Share your real identity and a way to reach you.</p></li>
-        <li class="reveal"><span>02</span><h3>Offering</h3><p>Receive three private options and choose the one that suits you.</p></li>
-        <li class="reveal"><span>03</span><h3>Conversation</h3><p>After receipt, a discreet exchange creates context and trust.</p></li>
-        <li class="reveal"><span>04</span><h3>Encounter</h3><p>If the connection is right, an experience is shaped around you.</p></li>
+        <li class="reveal"><span>01</span><h3>Presence</h3><p>Share enough to be known, never sensitive credentials.</p></li>
+        <li class="reveal"><span>02</span><h3>Consideration</h3><p>Your request is reviewed privately and without obligation.</p></li>
+        <li class="reveal"><span>03</span><h3>Conversation</h3><p>If invited onward, expectations and boundaries are discussed.</p></li>
+        <li class="reveal"><span>04</span><h3>Possibility</h3><p>Anything further requires mutual agreement and lawful terms.</p></li>
       </ol>
-      <aside class="offering-note reveal">
-        <span class="mini-sigil" aria-hidden="true">✦</span>
-        <p><strong>Offerings are arranged privately.</strong> Options may include cryptocurrency, gift cards, or approved beauty and spa services. Never send passwords, recovery phrases or account credentials. An offering begins consideration; it does not guarantee an encounter.</p>
-      </aside>
+      <p class="plain-note"><strong>Before you proceed:</strong> submitting a request is free and does not guarantee contact, acceptance or an encounter. The House will never request passwords, recovery phrases or account access.</p>
     </section>
 
-    <section class="request section" id="request">
+    <section class="section request" id="request" aria-labelledby="request-title">
       <div class="request-copy">
-        <p class="section-index">04 / REQUEST CONSIDERATION</p>
-        <h2>Make yourself<br><em>known.</em></h2>
-        <p>This is not the questionnaire. It is only the first signal. If The House wishes to continue, offering instructions will arrive privately.</p>
-        <div class="privacy-badge"><span>◈</span><p>Your information is private and used only to evaluate and respond to this request.</p></div>
+        <p class="section-index">04 / PRESENT YOURSELF</p>
+        <h2 id="request-title">Knock with<br><em>intention.</em></h2>
+        <p>This is a first introduction, not a booking. Write plainly. Thoughtfulness carries more weight than performance.</p>
+        <div class="privacy-note"><strong>Your privacy</strong><p>Your details are used only to review and respond to this request. Do not include financial, identity-document or account-access information.</p></div>
       </div>
       <form id="lead-form" class="lead-form" novalidate>
-        <div class="field">
-          <label for="realName">Real name <span>Required</span></label>
-          <input id="realName" name="name" type="text" autocomplete="name" required>
-          <small class="error">Tell us your real name.</small>
-        </div>
-        <div class="field">
-          <label for="instagram">Instagram account <span>Required</span></label>
-          <div class="input-prefix"><b>@</b><input id="instagram" name="instagram" type="text" autocomplete="off" required pattern="[A-Za-z0-9._]{1,30}"></div>
-          <small class="error">Enter a valid Instagram username.</small>
-        </div>
-        <div class="field">
-          <label for="email">Email address <span>Required</span></label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-          <small class="error">Enter a valid email address.</small>
-        </div>
-        <div class="field">
-          <label for="whatsapp">WhatsApp <span>Optional · faster contact</span></label>
-          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" placeholder="+507 …">
-        </div>
-        <label class="check"><input name="privacy_consent" type="checkbox" required><span>I confirm that these details are mine and agree to the <a href="privacy.html">privacy notice</a> and <a href="terms.html">terms</a>.</span></label>
-        <input type="text" name="_gotcha" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="button button-primary submit-button" type="submit"><span>Send my signal</span><i aria-hidden="true">→</i></button>
+        <input type="hidden" name="language" value="en">
+        <div class="field"><label for="name">Name <span>Required</span></label><input id="name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required aria-describedby="name-error"><small id="name-error" class="error">Please enter your name.</small></div>
+        <div class="field"><label for="contact">Email <span>Required</span></label><input id="contact" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required aria-describedby="contact-error"><small id="contact-error" class="error">Please enter a valid email address.</small></div>
+        <div class="field"><label for="instagram">Instagram <span>Optional</span></label><div class="input-prefix"><span aria-hidden="true">@</span><input id="instagram" name="instagram" type="text" autocomplete="off" maxlength="30" pattern="[A-Za-z0-9._]{1,30}" aria-describedby="instagram-hint"></div><small id="instagram-hint" class="hint">Username only; no password or profile access.</small></div>
+        <div class="field"><label for="drawn">What drew you to The House? <span>Required</span></label><textarea id="drawn" name="interest" rows="4" minlength="20" maxlength="800" required aria-describedby="drawn-error"></textarea><small id="drawn-error" class="error">Please share at least 20 characters.</small></div>
+        <div class="field"><label for="discovery">How did you find us? <span>Optional</span></label><select id="discovery" name="discovery"><option value="">Select one</option><option>Instagram</option><option>Dating profile</option><option>Personal referral</option><option>Search</option><option>Other</option></select></div>
+        <label class="consent"><input name="privacy_consent" type="checkbox" required><span>I am 18 or older, confirm these details are mine, and agree to the <a href="privacy.html">privacy notice</a> and <a href="terms.html">terms</a>.</span></label>
+        <input class="honey" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="button button-primary submit-button" type="submit"><span>Present myself</span><i aria-hidden="true">→</i></button>
         <p class="form-status" role="status" aria-live="polite"></p>
+        <noscript><p class="noscript">JavaScript is required to submit this private request.</p></noscript>
       </form>
     </section>
   </main>
 
-  <footer>
-    <a class="wordmark" href="#top"><span class="sigil">N</span><span>THE HOUSE <i>OF</i> NOIR</span></a>
-    <p>Private encounters · By consideration only</p>
-    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
-    <p class="copyright">© <span id="year"></span> THON</p>
-  </footer>
+  <footer><a class="wordmark" href="#top"><span class="seal" aria-hidden="true">N</span><span>THE HOUSE <i>OF</i> NOIR</span></a><p>Panama · By consideration only</p><div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div><p>© <span id="year">2026</span> THON</p></footer>
 </body>
 </html>

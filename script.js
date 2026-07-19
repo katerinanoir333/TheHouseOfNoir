@@ -1,53 +1,24 @@
-const header = document.querySelector('.site-header');
-const menuButton = document.querySelector('.menu-button');
-menuButton?.addEventListener('click', () => {
-  const open = header.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.textContent = open ? 'Close' : 'Menu';
-});
-document.querySelectorAll('nav a').forEach(link => link.addEventListener('click', () => {
-  header.classList.remove('open');
-  menuButton?.setAttribute('aria-expanded', 'false');
-  if (menuButton) menuButton.textContent = 'Menu';
-}));
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: .12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const form = document.getElementById('lead-form');
-const status = form?.querySelector('.form-status');
-form?.addEventListener('submit', async event => {
-  event.preventDefault();
-  form.querySelectorAll('.field').forEach(field => field.classList.remove('invalid'));
-  let valid = true;
-  form.querySelectorAll('input[required]').forEach(input => {
-    if (!input.checkValidity()) {
-      input.closest('.field')?.classList.add('invalid');
-      valid = false;
-    }
-  });
-  if (!valid) { status.textContent = 'Please complete the required details.'; return; }
-  const endpoint = window.THON_CONFIG?.formEndpoint;
-  if (!endpoint) {
-    status.textContent = 'The private channel is being prepared. Please return shortly.';
-    return;
-  }
-  const button = form.querySelector('button[type="submit"]');
-  button.disabled = true;
-  button.querySelector('span').textContent = 'Sending…';
-  status.textContent = '';
-  try {
-    const response = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-    if (!response.ok) throw new Error('Submission failed');
-    form.reset();
-    status.textContent = 'Your signal has been received. If there is resonance, The House will contact you privately.';
-    button.querySelector('span').textContent = 'Signal received';
-  } catch (_) {
-    status.textContent = 'Your signal could not be sent. Please try again in a moment.';
-    button.disabled = false;
-    button.querySelector('span').textContent = 'Send my signal';
-  }
-});
+(() => {
+  'use strict';
+  const header = document.querySelector('[data-header]');
+  const gateway=document.getElementById('gateway');const age=document.getElementById('age-confirm');const enter=gateway?.querySelector('.gateway-enter');const leave=gateway?.querySelector('.gateway-leave');const languageButtons=gateway?.querySelectorAll('[data-language]');let chosenLanguage=document.documentElement.lang;
+  const safeGet=(storage,key)=>{try{return storage.getItem(key);}catch{return null;}};const safeSet=(storage,key,value)=>{try{storage.setItem(key,value);}catch{}}
+  if(gateway&&safeGet(sessionStorage,'thon_access')!=='confirmed'){gateway.hidden=false;document.body.classList.add('gateway-open');setTimeout(()=>gateway.querySelector('[data-language]')?.focus(),0);}
+  languageButtons?.forEach(button=>button.addEventListener('click',()=>{chosenLanguage=button.dataset.language;languageButtons.forEach(item=>{const selected=item===button;item.classList.toggle('selected',selected);item.setAttribute('aria-pressed',String(selected));});}));
+  age?.addEventListener('change',()=>{enter.disabled=!age.checked;});
+  enter?.addEventListener('click',()=>{if(!age.checked)return;safeSet(sessionStorage,'thon_access','confirmed');safeSet(localStorage,'thon_language',chosenLanguage);if(chosenLanguage!==document.documentElement.lang){location.href=chosenLanguage==='es'?'es/':'../';return;}gateway.hidden=true;document.body.classList.remove('gateway-open');document.querySelector('#main')?.focus({preventScroll:true});});
+  leave?.addEventListener('click',()=>{gateway.querySelector('.gateway-panel').innerHTML='<p class="eyebrow">THE HOUSE OF NOIR</p><h2>This passage is for adults only.</h2><p>Please close this page. You may return when you are 18 or older.</p>';});
+  const menu = document.querySelector('.menu-button');
+  const nav = document.getElementById('primary-nav');
+  const closeMenu = () => { header?.classList.remove('menu-open'); menu?.setAttribute('aria-expanded','false'); if(menu) menu.textContent = menu.dataset.closed || 'Menu'; };
+  menu?.addEventListener('click', () => { const open=!header.classList.contains('menu-open'); header.classList.toggle('menu-open',open); menu.setAttribute('aria-expanded',String(open)); menu.textContent=open?(menu.dataset.open||'Close'):(menu.dataset.closed||'Menu'); });
+  nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMenu();menu?.focus();}});
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+  const year=document.getElementById('year');if(year)year.textContent=String(new Date().getFullYear());
+  const form=document.getElementById('lead-form');const status=form?.querySelector('.form-status');const submit=form?.querySelector('button[type="submit"]');const label=submit?.querySelector('span');
+  const words=document.documentElement.lang==='es'?{review:'Revisa los campos señalados.',unavailable:'El canal privado no está disponible temporalmente. Regresa más tarde.',sending:'Enviando…',success:'Tu presentación fue recibida. Si existe afinidad, La Casa se comunicará contigo en privado.',failure:'No pudimos enviar tu presentación. Inténtalo de nuevo en un momento.',default:'Presentarme',received:'Presentación recibida'}:{review:'Please review the highlighted fields.',unavailable:'The private channel is temporarily unavailable. Please return later.',sending:'Sending…',success:'Your introduction has been received. If there is alignment, The House will contact you privately.',failure:'Your introduction could not be sent. Please try again in a moment.',default:'Present myself',received:'Introduction received'};
+  const validate=input=>{const field=input.closest('.field');const invalid=!input.checkValidity();if(field){field.classList.toggle('invalid',invalid);input.setAttribute('aria-invalid',String(invalid));}return !invalid;};
+  form?.querySelectorAll('input:not(.honey),textarea,select').forEach(input=>input.addEventListener('blur',()=>validate(input)));
+  form?.addEventListener('submit',async event=>{event.preventDefault();const controls=[...form.querySelectorAll('input:not(.honey),textarea,select')];if(!controls.every(validate)||!form.checkValidity()){status.textContent=words.review;form.querySelector(':invalid')?.focus();return;}const endpoint=window.THON_CONFIG?.formEndpoint;if(!endpoint?.startsWith('https://')){status.textContent=words.unavailable;return;}submit.disabled=true;label.textContent=words.sending;status.textContent='';try{const response=await fetch(endpoint,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(!response.ok)throw new Error();form.reset();controls.forEach(control=>{control.removeAttribute('aria-invalid');control.closest('.field')?.classList.remove('invalid');});status.textContent=words.success;label.textContent=words.received;}catch{status.textContent=words.failure;submit.disabled=false;label.textContent=words.default;}});
+})();

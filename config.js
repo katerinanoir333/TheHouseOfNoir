@@ -1,6 +1,4 @@
-// Create a free form endpoint (for example, at formspree.io), add both private
-// recipient emails there, then replace the value below with the public endpoint.
-// Recipient email addresses must never be placed in this repository.
-window.THON_CONFIG = {
+// Public form endpoint only. Recipient addresses belong in the provider dashboard, never here.
+window.THON_CONFIG = Object.freeze({
   formEndpoint: "https://formspree.io/f/xbdnggkd"
-};
+});
