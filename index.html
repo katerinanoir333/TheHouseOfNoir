@@ -42,9 +42,7 @@
   </div>
   <header class="site-header" data-header>
     <a class="wordmark" href="#top" aria-label="The House of Noir, home"><span class="seal" aria-hidden="true">N</span><span>THE HOUSE <i>OF</i> NOIR</span></a>
-    <nav id="primary-nav" aria-label="Primary navigation">
-      <a href="#house">The House</a><a href="#katerina">Katerina</a><a href="#passage">The Passage</a>
-    </nav>
+    <nav id="primary-nav" aria-label="Primary navigation"><details class="nav-dropdown"><summary>Explore</summary><div class="nav-panel"><a href="#house"><span>01</span>The House</a><a href="#katerina"><span>02</span>Katerina</a><a href="#passage"><span>03</span>The Passage</a><a href="offerings/"><span>04</span>Offerings</a></div></details></nav>
     <div class="header-tools"><a class="language-switch" href="es/" lang="es" hreflang="es">ES</a><a class="header-cta" href="#request">Present yourself</a></div>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
   </header>
@@ -73,7 +71,7 @@
     </section>
 
     <section class="section katerina" id="katerina" aria-labelledby="katerina-title">
-      <div class="portrait" aria-hidden="true"><span class="portrait-line"></span><span class="portrait-gem"></span><span class="portrait-initial">K</span></div>
+      <figure class="portrait"><img src="assets/katerina-kitsune.webp" alt="Katerina Noir wearing an ivory kitsune mask and black couture"><figcaption>Katerina Noir · The velvet current</figcaption></figure>
       <div class="katerina-copy reveal">
         <p class="section-index">02 / KATERINA NOIR</p>
         <p class="role">Founder · The velvet current</p>
@@ -105,6 +103,7 @@
         <input type="hidden" name="language" value="en">
         <div class="field"><label for="name">Name <span>Required</span></label><input id="name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required aria-describedby="name-error"><small id="name-error" class="error">Please enter your name.</small></div>
         <div class="field"><label for="contact">Email <span>Required</span></label><input id="contact" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required aria-describedby="contact-error"><small id="contact-error" class="error">Please enter a valid email address.</small></div>
+        <div class="field"><label for="whatsapp">WhatsApp <span>Required</span></label><input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" minlength="8" maxlength="24" pattern="\+?[0-9 ()-]{8,24}" placeholder="+507 6000 0000" required aria-describedby="whatsapp-error"><small id="whatsapp-error" class="error">Enter a valid WhatsApp number, including country code.</small></div>
         <div class="field"><label for="instagram">Instagram <span>Optional</span></label><div class="input-prefix"><span aria-hidden="true">@</span><input id="instagram" name="instagram" type="text" autocomplete="off" maxlength="30" pattern="[A-Za-z0-9._]{1,30}" aria-describedby="instagram-hint"></div><small id="instagram-hint" class="hint">Username only; no password or profile access.</small></div>
         <div class="field"><label for="drawn">What drew you to The House? <span>Required</span></label><textarea id="drawn" name="interest" rows="4" minlength="20" maxlength="800" required aria-describedby="drawn-error"></textarea><small id="drawn-error" class="error">Please share at least 20 characters.</small></div>
         <div class="field"><label for="discovery">How did you find us? <span>Optional</span></label><select id="discovery" name="discovery"><option value="">Select one</option><option>Instagram</option><option>Dating profile</option><option>Personal referral</option><option>Search</option><option>Other</option></select></div>
