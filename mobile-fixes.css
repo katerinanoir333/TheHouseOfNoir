@@ -298,3 +298,47 @@ body.gateway-open {
     width: min(58vw, 220px) !important;
   }
 }
+
+/* Clear action cue for the interactive gold envelope. */
+.gift-envelope-wrap {
+  width: min(100%, 560px);
+  min-width: 0;
+  justify-self: center;
+}
+
+.gift-envelope-wrap .gift-envelope-link {
+  width: 100%;
+}
+
+.envelope-instruction {
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--gold);
+}
+
+.envelope-instruction strong {
+  display: block;
+  color: var(--paper);
+  font: 500 1.2rem var(--serif);
+}
+
+.envelope-instruction p {
+  margin: .35rem 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 500px) {
+  .envelope-instruction {
+    margin-bottom: 1rem;
+  }
+
+  .envelope-instruction strong {
+    font-size: 1.3rem;
+  }
+
+  .envelope-instruction p {
+    font-size: 1rem;
+  }
+}
