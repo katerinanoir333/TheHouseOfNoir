@@ -16,7 +16,7 @@ If the repository name or domain changes, update that URL in `index.html`, `es/i
 
 ## Form configuration
 
-The public Formspree endpoint is stored in `config.js`. In the Formspree dashboard:
+The public Formspree endpoint is stored in `config.js` and mirrored as a fallback in `script.js` so a missing cached configuration file cannot disable submissions. Keep both values aligned. In the Formspree dashboard:
 
 - confirm the intended private recipient(s);
 - enable spam protection and email verification if available;
