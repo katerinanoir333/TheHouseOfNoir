@@ -80,6 +80,50 @@ footer,
   }
 }
 
+/* THON monogram replaces the retailer wordmark on the gold envelope. */
+.envelope-brand-mark {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  z-index: 3;
+  width: clamp(76px, 17vw, 112px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 2px solid #17130c;
+  color: #17130c;
+  background: rgba(226, 201, 128, .22);
+  box-shadow: inset 0 0 0 8px rgba(23, 19, 12, .08), 0 12px 28px rgba(23, 19, 12, .16);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.envelope-brand-mark::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(23, 19, 12, .45);
+}
+
+.envelope-brand-mark i {
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  font: 400 clamp(2.8rem, 8vw, 4.8rem)/1 var(--serif);
+  font-style: normal;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 500px) {
+  .envelope-brand-mark {
+    top: 52%;
+    width: 82px;
+  }
+
+  .envelope-brand-mark i {
+    font-size: 3.1rem;
+  }
+}
+
 @media (max-width: 380px) {
   .site-header { padding-inline: .8rem; }
   .wordmark {
